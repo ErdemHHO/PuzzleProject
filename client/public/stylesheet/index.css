@@ -1,0 +1,41 @@
+.genislik {
+	max-width: 600px;
+  }
+  
+  .field-wrapper {
+	position:relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	height: 200px;
+	border: 1px solid #000;
+	box-sizing: border-box; /* sınır kutusunu dahil et */
+	padding: 0;
+	margin: 0;
+  }
+  .field-wrapper img {
+	width: 100%; /* genişlik 100% olarak ayarlanır */
+	height: 100%;
+	object-fit: cover;
+  }
+  .field-wrapper img:hover {
+	width:210px;
+	height:210px;
+	object-fit:cover;
+	z-index: 1000;
+	border:1px solid #000
+  }
+  .selected {
+	width: 210px;
+	height: 210px;
+	object-fit: cover;
+	z-index: 1000;
+	border: 1px solid #000;
+  }
+
+
+  .form-bg{
+	background-color: #9cb4ff;
+  }
+  
