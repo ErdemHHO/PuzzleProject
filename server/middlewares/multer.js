@@ -5,7 +5,7 @@ import fs from 'fs';
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'uploads/'); // Dosyaların kaydedileceği klasör
+        cb(null, 'uploads/');
     },
     filename: (req, file, cb) => {
         const fileExtension = path.extname(file.originalname);

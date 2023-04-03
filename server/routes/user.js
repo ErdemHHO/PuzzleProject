@@ -1,12 +1,18 @@
-import { express } from "express";
+import express from "express";
 
-import {createPuzzle} from '../controllers/user.js';
+import {createPuzzle,getPuzzle} from '../controllers/user.js';
 
+
+import { upload } from '../middlewares/multer.js';
 
 const router=express.Router();
 
+router.post('/createpuzzle', upload.single('fileName'), createPuzzle);
 
-router.post('/createpuzzle',createPuzzle);
+
+router.get('/puzzle',getPuzzle);
+
+
 
 
 export default router;

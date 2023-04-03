@@ -9,7 +9,6 @@ import userRoutes from './routes/user.js'
 const app=express();
 dotenv.config();
 
-// uploads klasörünü erişilebilir hale getirin
 app.use('/uploads', express.static('uploads'));
 
 app.use(bodyParser.json({limit:"30mb"}));
@@ -23,7 +22,7 @@ app.listen(process.env.PORT,()=>{
     console.log(process.env.PORT," . Port Dinleniyor");
     mongoose
     .set("strictQuery",false)
-    .connect(process.env.MONGO_DB)
+    .connect(process.env.MONGO_URI)
     .then(()=>console.log("connected to db"))
     .catch((error)=>console.log(error))
 })
