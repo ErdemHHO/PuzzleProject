@@ -11,7 +11,13 @@ function Puzzle() {
       "/img/parca_6.jpg",
       "/img/parca_7.jpg",
       "/img/parca_8.jpg",
-      "/img/parca_9.jpg"
+      "/img/parca_9.jpg",
+      "/img/parca_10.jpg",
+      "/img/parca_11.jpg",
+      "/img/parca_12.jpg",
+      "/img/parca_13.jpg",
+      "/img/parca_14.jpg",
+      "/img/parca_15.jpg"
     ]);
     const correctImages=[
       "/img/parca_1.jpg",
@@ -22,7 +28,13 @@ function Puzzle() {
       "/img/parca_6.jpg",
       "/img/parca_7.jpg",
       "/img/parca_8.jpg",
-      "/img/parca_9.jpg"];
+      "/img/parca_9.jpg",
+      "/img/parca_10.jpg",
+      "/img/parca_11.jpg",
+      "/img/parca_12.jpg",
+      "/img/parca_13.jpg",
+      "/img/parca_14.jpg",
+      "/img/parca_15.jpg"];
     
     useEffect(() => {
       const shuffledImages = [...images].sort(() => Math.random() - 0.5);
@@ -70,23 +82,30 @@ function Puzzle() {
     <div className='p-5 text-center'>
         <Container className='genislik'>
             <Row>
-                {images.slice(0, 3).map((img, index) => (
+                {images.slice(0, 4).map((img, index) => (
                     <Col key={index} className="field-wrapper">
                     <img src={img} alt="Logo" onClick={() => handleClick(index)} />
                     </Col>
                 ))}
             </Row>
             <Row>
-                {images.slice(3, 6).map((img, index) => (
-                    <Col key={index + 3} className="field-wrapper">
-                    <img src={img} alt="Logo" onClick={() => handleClick(index + 3)} />
+                {images.slice(4, 8).map((img, index) => (
+                    <Col key={index + 4} className="field-wrapper">
+                    <img src={img} alt="Logo" onClick={() => handleClick(index + 4)} />
                     </Col>
                 ))}
             </Row>
             <Row>
-            {images.slice(6, 9).map((img, index) => (
-                <Col key={index + 6} className="field-wrapper">
-                <img src={img} alt="Logo" onClick={() => handleClick(index + 6)} />
+            {images.slice(8, 12).map((img, index) => (
+                <Col key={index + 8} className="field-wrapper">
+                <img src={img} alt="Logo" onClick={() => handleClick(index + 8)} />
+                </Col>
+            ))}
+            </Row>
+            <Row>
+            {images.slice(12, 16).map((img, index) => (
+                <Col key={index + 12} className="field-wrapper">
+                <img src={img} alt="Logo" onClick={() => handleClick(index + 12)} />
                 </Col>
             ))}
             </Row>
