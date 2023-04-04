@@ -3,17 +3,18 @@ import mongoose from 'mongoose';
 const userShema = mongoose.model('user',{
     email:{
         type: String,
-        required: true
+        required: true,
+        unique:true
     },
     password:{
         type: String,
         required: true
     },
-    name:{
+    firstName:{
         type: String,
         required: true
     },
-    surname:{
+    lastName:{
         type: String,
         required: true
     },

@@ -1,12 +1,52 @@
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
+
+import User from '../models/user.js' 
 
 
 const signin =async(req,res)=>{
-    res.send('signin')
+    const {email,password}=req.body;
+
+    try {
+        const kullanici=await User.findOne({email});
+
+        if(!kullanici) return res.status(404).json({msg:'Kullanıcı Bulunamadı'});
+
+        const parolaKontrol=await bcrypt.compare(password,kullanici.password);
+
+        if(!parolaKontrol) return res.status(400).json({msg:'Şifre Yanlış'});
+
+        const token=jwt.sign({email:kullanici.email,},'secret-key',{expriresIn:'3h'});
+
+        res.status(200).json({result:kullanici,token,msg:'Giriş Başarılı'});
+
+    } catch (error) {
+        res.status(500).json({msg:'Bir Hata Oluştu'});
+    }
+
 }
 
 
 const signup =async(req,res)=>{
-    res.send('signup')
+    const {email,password,confirmPassword,firstName,lastName}=req.body;
+
+    try {
+        const kullanici=await User.findOne({email});
+        if(kullanici) res.status(400).json({msg:'Kullanıcı Zaten Var'});
+
+        if(password !==confirmPassword) return res.status(400).json({msg:'Parolalar Aynı Değil'})
+
+        const sifrelenmisParola=await bcrypt.hash(password,12);
+
+        const result=await User.create({email,password:sifrelenmisParola,firstName,lastName});
+        
+        const token=jwt.sign({email:result.email,},'secret-key',{expriresIn:'3h'});
+
+        res.status(200).json({result,token,msg:'Kayıt Başarılı'});
+        
+    } catch (error) {
+        res.status(500).json({msg:'Bir Hata Oluştu'});
+    }
 }
 
 

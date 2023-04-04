@@ -11,3 +11,6 @@ export const fetchPuzzle = () => {
 export const createPuzzle = (newPuzzle) => {
   return axios.post(url2,newPuzzle);
 };
+
+export const girisYap=(formData)=>axios.post('/auth/signin',formData);
+export const uyeOl=(formData)=>axios.post('/auth/signup',formData);

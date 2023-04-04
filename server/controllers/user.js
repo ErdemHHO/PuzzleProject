@@ -3,6 +3,7 @@ import Jimp from "jimp";
 import puzzleShema from '../models/puzzle.js'
 
 const createPuzzle = async (req, res) => {
+
     try {
       const file = req.file;
       console.log(req.file)

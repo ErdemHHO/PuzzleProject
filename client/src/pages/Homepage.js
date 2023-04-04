@@ -7,7 +7,7 @@ function Homepage() {
   return (
     <div>
         <br />
-        <Navbar/>
+        <PhotoForm/>
         <Puzzle />
     </div>
   )
