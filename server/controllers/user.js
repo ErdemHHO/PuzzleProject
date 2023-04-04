@@ -19,7 +19,7 @@ const createPuzzle = async (req, res) => {
         for (let x = 0; x < width; x += pieceWidth) {
           const pieceNum = ((y / pieceHeight) * 4) + (x / pieceWidth) + 1;
           const piece = image.clone().crop(x, y, Math.min(pieceWidth, width - x), Math.min(pieceHeight, height - y));
-          await piece.writeAsync(`uploads/parca3_${pieceNum}.jpg`);
+          await piece.writeAsync(`uploads/parca_${pieceNum}.jpg`);
         }
       }
 
