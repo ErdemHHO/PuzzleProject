@@ -8,7 +8,7 @@ import auth from '../middlewares/auth.js';
 
 const router=express.Router();
 
-router.post('/createpuzzle',upload.single('fileName'), createPuzzle);
+router.post('/createpuzzle',auth,upload.single('fileName'), createPuzzle);
 
 
 router.get('/puzzle',getPuzzle);
