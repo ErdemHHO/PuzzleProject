@@ -17,7 +17,8 @@ function Puzzle() {
       "/img/parca_12.jpg",
       "/img/parca_13.jpg",
       "/img/parca_14.jpg",
-      "/img/parca_15.jpg"
+      "/img/parca_15.jpg",
+      "/img/parca_16.jpg"
     ]);
     const correctImages=[
       "/img/parca_1.jpg",
@@ -34,7 +35,8 @@ function Puzzle() {
       "/img/parca_12.jpg",
       "/img/parca_13.jpg",
       "/img/parca_14.jpg",
-      "/img/parca_15.jpg"];
+      "/img/parca_15.jpg",
+      "/img/parca_16.jpg"];
     
     useEffect(() => {
       const shuffledImages = [...images].sort(() => Math.random() - 0.5);
