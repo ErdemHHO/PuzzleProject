@@ -11,7 +11,11 @@ const createPuzzle = async (req, res) => {
       const image = await Jimp.read(file.path); 
       const width = image.bitmap.width; 
       const height = image.bitmap.height;
-  
+      
+      console.log(height/width)
+
+      if((height/width) <= 0.96 || (width/height) <= 0.96 ){return res.status(404).send({msg:'Fotoğraf Kare Olabilecek Boyutlarda Olmalıdır '})}
+
       const pieceWidth = Math.ceil(width / 4); 
       const pieceHeight = Math.ceil(height / 4);
   

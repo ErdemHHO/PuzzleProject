@@ -5,6 +5,8 @@ import bodyParser from 'body-parser'
 import cors from "cors";
 
 import userRoutes from './routes/user.js'
+import authRoutes from './routes/auth.js'
+
 
 const app=express();
 dotenv.config();
@@ -16,6 +18,8 @@ app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
 
 app.use(cors());
 
+
+app.use('/auth',authRoutes);
 app.use('/',userRoutes);
 
 app.listen(process.env.PORT,()=>{

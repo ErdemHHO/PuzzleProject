@@ -6,8 +6,8 @@ import Puzzle from '../components/Puzzle'
 function Homepage() {
   return (
     <div>
-        <Navbar />
-        <PhotoForm />
+        <br />
+        <Navbar/>
         <Puzzle />
     </div>
   )
