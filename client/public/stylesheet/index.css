@@ -43,3 +43,35 @@
 	background-color: #9cb4ff;
   }
   
+
+  
+/* Signin Form */
+
+.deneme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.deneme1 {
+	border-radius: 10px;
+  width: 500px;
+}
+
+.puzzlegif{
+	font-size: 50px;
+	width: 75px;
+	height: 75px;
+}
+
+.navbar ul li{
+	list-style-type:none;
+}
+
+.dhover:hover{
+	color: #fff !important;
+}
+.cikis{
+	
+}
