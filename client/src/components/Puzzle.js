@@ -37,11 +37,11 @@ function Puzzle() {
       "/img/parca_14.jpg",
       "/img/parca_15.jpg",
       "/img/parca_16.jpg"];
-    
-    useEffect(() => {
-      const shuffledImages = [...images].sort(() => Math.random() - 0.5);
-      setImages(shuffledImages);
-    }, []);
+      
+  useEffect(() => {
+  const shuffledImages = [...images].sort(() => Math.random() - 0.5);
+  setImages(shuffledImages);
+  }, []);
     
       const [firstIndex, setFirstIndex] = useState(null);
       const [secondIndex, setSecondIndex] = useState(null);
