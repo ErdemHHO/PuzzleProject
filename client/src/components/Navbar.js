@@ -93,7 +93,7 @@ function Navbar() {
                             <a className="dropdown-item text-black dhover" href="#">Another action</a>
                             <a className="dropdown-item text-black dhover" href="#">Something else here</a>
                             <div className="dropdown-divider text-black dhover"></div>
-                            <a className="dropdown-divider text-black dhover" onClick={logout}>Çıkış</a>
+                            <a className="dropdown-item text-black dhover" onClick={logout} >Cikis</a>
                         </div>
                     </li>
                 </ul>
