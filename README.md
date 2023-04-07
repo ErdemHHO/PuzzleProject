@@ -5,7 +5,7 @@ Proje kapsamında tasarlanan puzzle çözme oyunu ile kullanıcıdan dosya ya da
 
 Aşağıdaki link üzerinden proje içeriğine ait oluşturulmuş gerekli bilgilendirme metnine ve projenin genel tasarım kalıplarına ulaşabilirsiniz.
 
-Proje bilgilendirme dökümanına ulaşmak için [tıklayınız](https://drive.google.com/drive/my-drive)
+Proje bilgilendirme dökümanına ulaşmak için [tıklayınız](https://drive.google.com/file/d/1SZu2sO4HuV3GvYNFdnAIBf3imCe7Skha/view?usp=sharing)
 
 ### ÇALIŞTIRMA AŞAMALARI
  
