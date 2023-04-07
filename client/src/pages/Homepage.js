@@ -1,6 +1,5 @@
-import React from 'react'
-
-import {Container} from 'react-bootstrap'
+import React, { useState,useEffect } from 'react';
+import {useNavigate} from 'react-router-dom' 
 
 import Navbar from '../components/Navbar'
 
@@ -12,6 +11,17 @@ import Footer from '../components/Footer'
 
 
 function Homepage() {
+
+    const [user] = useState(JSON.parse(localStorage.getItem('profile')));
+
+    const navigate=useNavigate();
+
+      useEffect(() => {
+        if (!user) {
+        navigate("/signin");
+        }
+    }, []);
+
   return (
     <div>
         <br />

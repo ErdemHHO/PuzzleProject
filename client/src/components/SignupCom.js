@@ -22,19 +22,8 @@ function SignupCom() {
         confirmPassword:''
       });
 
-        const [user,setUser]=useState(JSON.parse(localStorage.getItem('profile')));
-
-      const dispatch=useDispatch();
-      const navigate=useNavigate();
-
-      useEffect(() => {
-        const user = JSON.parse(localStorage.getItem("profile"));
-        if (user) {
-        navigate("/");
-        } else {
-        setUser(user);
-        }
-    }, []);
+    const dispatch=useDispatch();
+    const navigate=useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();

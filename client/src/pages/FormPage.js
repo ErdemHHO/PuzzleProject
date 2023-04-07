@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import {useNavigate} from 'react-router-dom' 
 import PhotoForm from '../components/PhotoForm';
 
 function FormPage() {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const [user] = useState(JSON.parse(localStorage.getItem('profile')));
+
+  const navigate=useNavigate();
+
+    useEffect(() => {
+      if (!user) {
+      navigate("/signin");
+      }
+  }, []);
 
   return (
     <>

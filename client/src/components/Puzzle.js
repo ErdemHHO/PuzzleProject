@@ -4,25 +4,6 @@ import * as api from "../api/index";
 
 function Puzzle() {
 
-    const [images, setImages] = useState([
-      "/img/parca_1.jpg",
-      "/img/parca_2.jpg",
-      "/img/parca_3.jpg",
-      "/img/parca_4.jpg",
-      "/img/parca_5.jpg",
-      "/img/parca_6.jpg",
-      "/img/parca_7.jpg",
-      "/img/parca_8.jpg",
-      "/img/parca_9.jpg",
-      "/img/parca_10.jpg",
-      "/img/parca_11.jpg",
-      "/img/parca_12.jpg",
-      "/img/parca_13.jpg",
-      "/img/parca_14.jpg",
-      "/img/parca_15.jpg",
-      "/img/parca_16.jpg"
-    ]);
-
     const [dataImages, setDataImages] = useState();
 
     const correctImages=[      
@@ -56,9 +37,9 @@ function Puzzle() {
         }
       };
 
-    useEffect(() => {
-      puzzleess();
-    }, []);
+        useEffect(() => {
+          puzzleess();
+        }, []);
 
     
       const [firstIndex, setFirstIndex] = useState(null);

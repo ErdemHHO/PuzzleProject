@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Form,Container,Row,Col,Button,FloatingLabel} from 'react-bootstrap';
+import {Form,Container,Row,Col,Button} from 'react-bootstrap';
 
 
 function Footer() {
@@ -11,7 +11,7 @@ function Footer() {
                 <Col md={6}>
                     <Row>
                         <Col md={4}>
-                            <img className='Fpuzzlegif' src='/img/puzzlegif.gif'></img> 
+                            <img className='Fpuzzlegif' src='/img/puzzlegif.gif' alt='gif'></img> 
                         </Col>
                         <Col md={8}>
                             <h4 className='baslik1'><strong>PUZZLE OYUNU</strong></h4>

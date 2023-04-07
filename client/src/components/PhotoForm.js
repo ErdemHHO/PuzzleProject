@@ -23,8 +23,6 @@ const PhotoForm = () => {
     creator: `${user?.result?._id}`
   });
 
-  const [formTrue, setFormTrue] = useState(false);
-  console.log(formTrue)
 
   const handlePhotoChange = (event) => {
     setPostData({ ...postData, fileName: event.target.files[0] });
@@ -34,17 +32,6 @@ const PhotoForm = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-
-
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("profile"));
-    if (!user) {
-      navigate("/signin");
-    } else {
-      setUser(user);
-    }
-  }, []);
-
 
 
     const logout = () => {

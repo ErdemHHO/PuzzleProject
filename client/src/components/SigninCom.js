@@ -10,7 +10,7 @@ import {useDispatch} from 'react-redux'
 import {signin} from '../actions/auth'
 import {useNavigate} from 'react-router-dom' 
 
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function SigninCom() {
@@ -20,20 +20,8 @@ function SigninCom() {
         password: ''
       });
 
-
-    const [user,setUser]=useState(JSON.parse(localStorage.getItem('profile')));
-
       const dispatch=useDispatch();
       const navigate=useNavigate();
-
-      useEffect(() => {
-        const user = JSON.parse(localStorage.getItem("profile"));
-        if (user) {
-        navigate("/");
-        } else {
-        setUser(user);
-        }
-    }, []);
 
       const handleSubmit = async (e) => {
         e.preventDefault();
@@ -52,9 +40,9 @@ function SigninCom() {
     <Form onSubmit={handleSubmit} >
 
         <h2 className='text-center'>        
-        <img className='puzzlegif' src='/img/puzzlegif.gif'></img> 
+        <img className='puzzlegif' src='/img/puzzlegif.gif' alt='gif'></img> 
         Puzzle Oyunu
-        <img className='puzzlegif' src='/img/puzzlegif.gif'></img> 
+        <img className='puzzlegif' src='/img/puzzlegif.gif' alt='gif'></img> 
         </h2>
 
         <h4 className='text-center'>Giriş Yap</h4>
