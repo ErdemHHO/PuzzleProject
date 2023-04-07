@@ -14,6 +14,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function SigninCom() {
+
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -85,7 +86,6 @@ function SigninCom() {
                 Henuz Bir Hesabın Yoksa <Link to='/signup'>Kayıt Ol</Link> 
             </Form.Text>
         </div>
-        <ToastContainer />
     </Form>
   );
 }

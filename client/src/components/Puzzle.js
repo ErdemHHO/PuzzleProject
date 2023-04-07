@@ -1,7 +1,9 @@
 import React,{useState,useEffect} from 'react'
 import {Container,Col,Row} from 'react-bootstrap'
+import * as api from "../api/index";
 
 function Puzzle() {
+
     const [images, setImages] = useState([
       "/img/parca_1.jpg",
       "/img/parca_2.jpg",
@@ -20,35 +22,51 @@ function Puzzle() {
       "/img/parca_15.jpg",
       "/img/parca_16.jpg"
     ]);
-    const correctImages=[
-      "/img/parca_1.jpg",
-      "/img/parca_2.jpg",
-      "/img/parca_3.jpg",
-      "/img/parca_4.jpg",
-      "/img/parca_5.jpg",
-      "/img/parca_6.jpg",
-      "/img/parca_7.jpg",
-      "/img/parca_8.jpg",
-      "/img/parca_9.jpg",
-      "/img/parca_10.jpg",
-      "/img/parca_11.jpg",
-      "/img/parca_12.jpg",
-      "/img/parca_13.jpg",
-      "/img/parca_14.jpg",
-      "/img/parca_15.jpg",
-      "/img/parca_16.jpg"];
+
+    const [dataImages, setDataImages] = useState();
+
+    const correctImages=[      
+        'http://localhost:4000/uploads/parca_1.jpg',
+        'http://localhost:4000/uploads/parca_2.jpg',
+        'http://localhost:4000/uploads/parca_3.jpg',
+        'http://localhost:4000/uploads/parca_4.jpg',
+        'http://localhost:4000/uploads/parca_5.jpg',
+        'http://localhost:4000/uploads/parca_6.jpg',
+        'http://localhost:4000/uploads/parca_7.jpg',
+        'http://localhost:4000/uploads/parca_8.jpg',
+        'http://localhost:4000/uploads/parca_9.jpg',
+        'http://localhost:4000/uploads/parca_10.jpg',
+        'http://localhost:4000/uploads/parca_11.jpg',
+        'http://localhost:4000/uploads/parca_12.jpg',
+        'http://localhost:4000/uploads/parca_13.jpg',
+        'http://localhost:4000/uploads/parca_14.jpg',
+        'http://localhost:4000/uploads/parca_15.jpg',
+        'http://localhost:4000/uploads/parca_16.jpg'];
+
+      const puzzleess = async () => {
+        const response = await api.fetchPuzzle();
       
-  useEffect(() => {
-  const shuffledImages = [...images].sort(() => Math.random() - 0.5);
-  setImages(shuffledImages);
-  }, []);
+        if (Array.isArray(response.data.images)) { 
+          setDataImages(response.data.images); 
+      
+          const shuffledImages = [...response.data.images].sort(() => Math.random() - 0.5);
+          setDataImages(shuffledImages);
+        } else {
+          console.log("Bir Hata Oluştu");
+        }
+      };
+
+    useEffect(() => {
+      puzzleess();
+    }, []);
+
     
       const [firstIndex, setFirstIndex] = useState(null);
       const [secondIndex, setSecondIndex] = useState(null);
 
-      function arraysEqual(images, correctImages) {
-        for (let i = 0; i < images.length; i++) {
-          if (images[i] !== correctImages[i]) {
+      function arraysEqual(dataImages, correctImages) {
+        for (let i = 0; i < dataImages.length; i++) {
+          if (dataImages[i] !== correctImages[i]) {
             return console.log("Hatalı");
           }
         }
@@ -61,7 +79,7 @@ function Puzzle() {
           }
           
           if (firstIndex !== null && firstIndex !== index) { // İlk tıklama yapıldıysa
-            const newImages = [...images];
+            const newImages = [...dataImages];
             const firstImage = newImages[firstIndex];
             const secondImage = newImages[index];
             
@@ -70,7 +88,7 @@ function Puzzle() {
             newImages[index] = firstImage;
           
             // State'i güncelleme
-            setImages(newImages);
+            setDataImages(newImages);
             setFirstIndex(null);
             setSecondIndex(null);
             arraysEqual(newImages,correctImages);
@@ -82,36 +100,40 @@ function Puzzle() {
       };
   return (
     <div className='p-5 text-center'>
+      {dataImages ? (
         <Container className='genislik'>
-            <Row>
-                {images.slice(0, 4).map((img, index) => (
-                    <Col key={index} className="field-wrapper">
-                    <img src={img} alt="Logo" onClick={() => handleClick(index)} />
-                    </Col>
-                ))}
-            </Row>
-            <Row>
-                {images.slice(4, 8).map((img, index) => (
-                    <Col key={index + 4} className="field-wrapper">
-                    <img src={img} alt="Logo" onClick={() => handleClick(index + 4)} />
-                    </Col>
-                ))}
-            </Row>
-            <Row>
-            {images.slice(8, 12).map((img, index) => (
-                <Col key={index + 8} className="field-wrapper">
-                <img src={img} alt="Logo" onClick={() => handleClick(index + 8)} />
-                </Col>
-            ))}
-            </Row>
-            <Row>
-            {images.slice(12, 16).map((img, index) => (
-                <Col key={index + 12} className="field-wrapper">
-                <img src={img} alt="Logo" onClick={() => handleClick(index + 12)} />
-                </Col>
-            ))}
-            </Row>
-        </Container>
+          <Row>
+              {dataImages.slice(0, 4).map((img, index) => (
+                  <Col key={index} className="field-wrapper">
+                  <img src={img} alt="Logo" onClick={() => handleClick(index)} />
+                  </Col>
+              ))}
+          </Row>
+          <Row>
+              {dataImages.slice(4, 8).map((img, index) => (
+                  <Col key={index + 4} className="field-wrapper">
+                  <img src={img} alt="Logo" onClick={() => handleClick(index + 4)} />
+                  </Col>
+              ))}
+          </Row>
+          <Row>
+          {dataImages.slice(8, 12).map((img, index) => (
+              <Col key={index + 8} className="field-wrapper">
+              <img src={img} alt="Logo" onClick={() => handleClick(index + 8)} />
+              </Col>
+          ))}
+          </Row>
+          <Row>
+          {dataImages.slice(12, 16).map((img, index) => (
+              <Col key={index + 12} className="field-wrapper">
+              <img src={img} alt="Logo" onClick={() => handleClick(index + 12)} />
+              </Col>
+          ))}
+          </Row>
+      </Container>
+      ) : (
+          <div className="loading pt-5 p-5">Yükleniyor&#8230;</div>
+        )}
     </div>
   )
 }

@@ -45,9 +45,10 @@ function Navbar() {
 
   return (
     <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-info p-3">
+        <nav id='h-navbar' className="navbar navbar-expand-lg navbar-dark bg-danger p-3 ">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#"><h3>PUZZLE GAME</h3></a>
+                <img className='Npuzzlegif' src='/img/puzzlegif.gif'></img> 
+                <a className="navbar-brand" href="#"><h3>PUZZLE OYUNU</h3></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
