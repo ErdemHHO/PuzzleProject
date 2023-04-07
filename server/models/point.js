@@ -17,7 +17,7 @@ const pointShema = mongoose.model('point',{
         required: true
     },
     time:{
-        type:Number,
+        type:String,
         required: true
     },
     point:{

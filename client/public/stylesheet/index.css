@@ -7,6 +7,21 @@
 	opacity: 0;
 	animation: slideInFromBottom 2s ease-in-out 0.5s forwards;
   }
+  @media only screen and (max-width: 600px) {
+	.genislik {
+		padding: 20px;
+		max-width: 500px;
+	}
+	.field-wrapper{
+		width: 125px !important;
+		height: 125px !important;
+	}
+	.field-wrapper img:hover {
+		width:130px !important;
+		height:130px !important;
+	  }
+  }
+  
   
   .field-wrapper {
 	position:relative;
@@ -73,7 +88,18 @@
 	width: 65px;
 	height: 65px;
 }
+.puzzle{
+	z-index: 0 !important;
+}
 
+.onOff{
+	z-index: 1000 !important;
+}
+.dropdown-menu {
+	transform: translateX(-50px);
+	position: absolute;
+	z-index: 1000;
+  }
 
 .navbar ul li{
 	list-style-type:none;
@@ -228,7 +254,19 @@
 	animation: slideInFromTop 1.5s ease-in-out 0.5s forwards;
 }
 
-
+.point {
+	font-size: x-large;
+	border-radius: 10px;
+	opacity: 0;
+	position: relative;
+	z-index: -5;
+	animation: slideInFromTop 1.5s ease-in-out 0.5s forwards;
+  }
+  @media only screen and (max-width: 800px) {
+	.point {
+	  font-size: medium;
+	}
+  }
 	@keyframes slideInFromTop {
 		from {
 			opacity: 0;
@@ -283,7 +321,57 @@
 	animation: slideInFromBottom 2s ease-in-out 0.5s forwards;
 }
 
+.social{
+	background-color: #FFC108;
+	position: fixed;
+	bottom:40%;
+	z-index: 1000;
+	border-radius: 50px;
+	opacity: 0;
+	animation: socialAnimation 2s ease-in-out 0.5s forwards;
+	transition: transform 1s ease-in-out;
+}
+@media only screen and (max-width: 1000px) {
+	.social {
+	  display: none;
+	}
+  }
+.social:hover{
+	transform: scale(1.1);
+}
 
+.linkedin:hover{
+	color: #0474B3;
+}
+.instagram:hover{
+	color:#F601C1;
+}
+.twitter:hover{
+	color:#1191F3;
+}
+.facebook:hover{
+	color:#1191F3;
+}
+
+@keyframes socialAnimation {
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.icon{
+	border-radius: 50px;
+	animation: 10s ease-in-out 0.5s forwards;
+	transition: transform 1s ease-in-out;
+}
+.icon:hover{
+	transform: translateX(20px);
+}
 
 .footer{
 	opacity: 0;

@@ -99,38 +99,50 @@ function Puzzle() {
           }  
       };
   return (
-    <div className='p-5 text-center'>
+    <div className='puzzle'>
       {dataImages ? (
-        <Container className='genislik'>
-          <Row>
-              {dataImages.slice(0, 4).map((img, index) => (
-                  <Col key={index} className="field-wrapper">
-                  <img src={img} alt="Logo" onClick={() => handleClick(index)} />
-                  </Col>
-              ))}
-          </Row>
-          <Row>
-              {dataImages.slice(4, 8).map((img, index) => (
-                  <Col key={index + 4} className="field-wrapper">
-                  <img src={img} alt="Logo" onClick={() => handleClick(index + 4)} />
-                  </Col>
-              ))}
-          </Row>
-          <Row>
-          {dataImages.slice(8, 12).map((img, index) => (
-              <Col key={index + 8} className="field-wrapper">
-              <img src={img} alt="Logo" onClick={() => handleClick(index + 8)} />
-              </Col>
-          ))}
-          </Row>
-          <Row>
-          {dataImages.slice(12, 16).map((img, index) => (
-              <Col key={index + 12} className="field-wrapper">
-              <img src={img} alt="Logo" onClick={() => handleClick(index + 12)} />
-              </Col>
-          ))}
-          </Row>
-      </Container>
+        <div>
+             <div class='point bg-info text-center mt-1 mx-3 p-1'>
+                <Container style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <div style={{ flex: 1, marginRight: '20px' }}>Süre: 15:03</div>
+                  <div style={{ flex: 1, marginRight: '20px' }}>Hamle Sayısı: 16</div>
+                  <div style={{ flex: 1, marginRight: '20px' }}>Puan : 65</div>
+                  <div style={{ flex: 1 }}>Tarih: 19.09.2001</div>
+                </Container>
+              </div>
+
+          <Container className='genislik pt-3 text-center'>
+            <Row>
+                {dataImages.slice(0, 4).map((img, index) => (
+                    <Col key={index} className="field-wrapper">
+                    <img src={img} alt="Logo" onClick={() => handleClick(index)} />
+                    </Col>
+                ))}
+            </Row>
+            <Row>
+                {dataImages.slice(4, 8).map((img, index) => (
+                    <Col key={index + 4} className="field-wrapper">
+                    <img src={img} alt="Logo" onClick={() => handleClick(index + 4)} />
+                    </Col>
+                ))}
+            </Row>
+            <Row>
+            {dataImages.slice(8, 12).map((img, index) => (
+                <Col key={index + 8} className="field-wrapper">
+                <img src={img} alt="Logo" onClick={() => handleClick(index + 8)} />
+                </Col>
+            ))}
+            </Row>
+            <Row>
+            {dataImages.slice(12, 16).map((img, index) => (
+                <Col key={index + 12} className="field-wrapper">
+                <img src={img} alt="Logo" onClick={() => handleClick(index + 12)} />
+                </Col>
+            ))}
+            </Row>
+          </Container>          
+        </div>
+
       ) : (
           <div className="loading pt-5 p-5">Yükleniyor&#8230;</div>
         )}

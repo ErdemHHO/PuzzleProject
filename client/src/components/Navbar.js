@@ -45,7 +45,7 @@ function Navbar() {
 
   return (
     <div>
-        <nav id='h-navbar' className="navbar navbar-expand-lg navbar-dark bg-danger p-3 m-3">
+        <nav id='h-navbar' className="navbar navbar-expand-lg navbar-dark bg-danger p-3 mx-3 mb-1">
             <div className="container-fluid">
                 <img className='Npuzzlegif' src='/img/puzzlegif.gif'></img> 
                 <a className="navbar-brand" href="/home"><h3>PUZZLE OYUNU</h3></a>
@@ -73,11 +73,11 @@ function Navbar() {
                                 <Link className="dropdown-item text-black dhover" to="/signin" > Giris Yap </Link>
                             )}
                         </a>
-                        <div className="dropdown-menu">
-                            <a className="dropdown-item text-black dhover" href="#">Profil Bilgilerim</a>
-                            <a className="dropdown-item text-black dhover" href="#">Oynama Geçmişim</a>
-                            <div className="dropdown-divider text-black dhover"></div>
-                            <a className="dropdown-item text-black dhover" onClick={logout} >Cikis</a>
+                        <div className="dropdown-menu onOff ">
+                            <a className="dropdown-item text-black dhove onOffr" href="#">Profil Bilgilerim</a>
+                            <a className="dropdown-item text-black dhover onOff" href="#">Oynama Geçmişim</a>
+                            <div className="dropdown-divider text-black dhover onOff"></div>
+                            <a className="dropdown-item text-black dhover onOff" onClick={logout} >Cikis</a>
                         </div>
                     </li>
                 </ul>
