@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 import Jimp from "jimp";
+
 import puzzleShema from '../models/puzzle.js'
+import pointSchema from '../models/point.js' 
 
 const createPuzzle = async (req, res) => {
 
@@ -68,8 +70,20 @@ const getPuzzle=async(req,res)=>{
 }
 
 const createPoint=async(req,res)=>{
-    const {gamer_id,numberOfMoves,time,point} = req.body;
+
+    const {creator,numberOfMoves,time,point} = req.body;
     console.log(req.body)
+
+    try {
+
+      const newPoint = new pointSchema({ gamer_id:creator,numberOfMoves,time,point });
+      await newPoint.save();
+      console.log(newPoint)
+      return res.status(201).json({ newPoint, msg: 'Oyun Kaydedildi' });
+    } catch (error) {
+      console.error(error);
+      return res.status(409).json({ msg: error.message });
+    }
 }
 
 export{
