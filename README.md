@@ -35,3 +35,4 @@ Proje bilgilendirme dökümanına ulaşmak için [tıklayınız](https://drive.g
   npm start
   ````
  
+![alt text](https://media.discordapp.net/attachments/1083112351764598817/1093884172965249086/Screenshot_2023-04-07_at_16.04.29.png?width=1074&height=671)
