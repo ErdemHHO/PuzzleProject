@@ -34,3 +34,4 @@ Proje bilgilendirme dökümanına ulaşmak için [tıklayınız](https://drive.g
 - ````
   npm start
   ````
+ 
