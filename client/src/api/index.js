@@ -3,6 +3,7 @@ import axios from "axios";
 
 const url1='/puzzle'
 const url2='/createpuzzle'
+const url3='/point'
 
 
 const API=axios.create({baseURL:'http://localhost:4000'});
@@ -21,6 +22,10 @@ export const fetchPuzzle = () => {
 
 export const createPuzzle = (newPuzzle) => {
   return API.post(url2,newPuzzle);
+};
+
+export const createPoint = (newPuzzle) => {
+  return API.post(url3,newPuzzle);
 };
 
 export const girisYap=(formData)=>axios.post('/auth/signin',formData);

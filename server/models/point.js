@@ -7,11 +7,6 @@ const pointShema = mongoose.model('point',{
         ref: 'user',
         required: true
     },
-    puzzle_id:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'puzzle',
-        required: true
-    },
     numberOfMoves:{
         type:Number,
         required: true

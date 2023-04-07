@@ -67,6 +67,12 @@ const getPuzzle=async(req,res)=>{
     }
 }
 
+const createPoint=async(req,res)=>{
+    const {gamer_id,numberOfMoves,time,point} = req.body;
+    console.log(req.body)
+}
+
 export{
-    createPuzzle,getPuzzle
+    createPuzzle,getPuzzle,
+    createPoint
 }
