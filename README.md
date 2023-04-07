@@ -1,4 +1,4 @@
-# PuzzleProject
+#Puzzle Project
 
 ## ÇALIŞMA AMACI
 Proje kapsamında tasarlanan puzzle çözme oyunu ile kullanıcıdan dosya ya da Url'den alınan bir resim/fotoğraf dosyasının ekrana 16 parça şeklinde ayrılması beklenmektedir. Yüklenen görsel 4 satır ve 4 sütun olmak üzere 16 parçaya ayrılır. Karıştır butonu ile on altı parçaya ayrılan görsel en az bir parça doğru yerleşene kadar devam eder. Parçaların yer değiştirme şekli değiştirilmek istenen iki butona tıklanma ile gerçekleştirilmektedir.
