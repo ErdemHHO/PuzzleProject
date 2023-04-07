@@ -28,7 +28,7 @@ const createPuzzle = async (req, res) => {
         }
       }
 
-      const newPuzzle = new puzzleShema({ selectedFile: file.path, creator });
+      const newPuzzle = new puzzleShema({ selectedFile: file.path, creator_id : creator });
       await newPuzzle.save();
       return res.status(201).json({ newPuzzle, msg: 'Puzzle Oluşturuldu' });
     } catch (error) {

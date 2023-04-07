@@ -1,19 +1,22 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Puzzle from '../components/Puzzle'
 
 import {Container} from 'react-bootstrap'
+
+import Navbar from '../components/Navbar'
+import Puzzle from '../components/Puzzle'
+import Footer from '../components/Footer'
+
 
 
 function Homepage() {
   return (
-    <Container className="bg-light">
     <div>
         <br />
-        <Navbar/>
+        <Navbar />
         <Puzzle />
+
+        <Footer />
     </div>
-    </ Container >
   )
 }
 

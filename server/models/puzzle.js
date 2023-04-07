@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
 
 const puzzleShema = mongoose.model('puzzle',{
-    creator:{
-        type: String,
+    creator_id:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user',
         required: true
     },
     selectedFile:{

@@ -78,6 +78,11 @@
 .navbar ul li{
 	list-style-type:none;
 }
+.navbar .nav-link:hover{
+	text-decoration: underline;
+	color: #000;
+}
+
 
 .dhover:hover{
 	color: #fff !important;
@@ -212,7 +217,13 @@
 	animation: slideInFromTop 2s ease-in-out 0.5s forwards;
 }
 
+
+.navbar-name {
+	text-transform: uppercase;
+}
+
 #h-navbar{
+	font-size: large;
 	opacity: 0;
 	animation: slideInFromTop 1.5s ease-in-out 0.5s forwards;
 }
@@ -270,4 +281,24 @@
 	margin-top: 20px;
 	opacity: 0;
 	animation: slideInFromBottom 2s ease-in-out 0.5s forwards;
+}
+
+
+
+.footer{
+	opacity: 0;
+	animation: slideInFromBottom 2s ease-in-out 0.5s forwards;
+}
+
+.Fpuzzlegif{
+	width: 150px;
+	height: 159px;
+}
+
+.baslik1{
+	font-size: 75px;
+}
+
+.footer-form{
+	height: 75px;
 }
