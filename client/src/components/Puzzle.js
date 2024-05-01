@@ -178,7 +178,7 @@ function Puzzle() {
         try {
           if(postData.time){
             const response = await api.createPoint(postData);
-
+            navigate('/')
           }
         } catch (error) {
           console.error(error);
