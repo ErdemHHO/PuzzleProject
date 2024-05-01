@@ -43,5 +43,3 @@ To access the project information document, [click here](https://drive.google.co
 - ````
   npm start
   ````
- 
-![alt text](https://media.discordapp.net/attachments/1083112351764598817/1093884172965249086/Screenshot_2023-04-07_at_16.04.29.png?width=1074&height=671)
